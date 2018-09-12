@@ -1,0 +1,39 @@
+<h1>Students Data</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
+<table class='table' *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>StudentId</th>
+      <th>StudentName</th>
+      <th>StudentClass</th>
+      <th>StudentAge</th>
+      <th>StudentFees</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of forecasts">
+      <td>{{ forecast.studentId }}</td>
+      <td>{{ forecast.studentName }}</td>
+      <td>{{ forecast.studentClass }}</td>
+      <td>{{ forecast.studentAge }}</td>
+      <td>{{ forecast.studentFees }}</td>
+      <td>{{ forecast.date }}</td>
+    </tr>
+
+  </tbody>
+  <input type="search" class="btn btn-default" [(ngModel)]="searchName" (keyup.enter)="sendMessage()" id="searchStudent" onfocus="this.value=''" placeholder="search name">
+  <br />
+  <br />
+  <button type="button" value="snd" (click)="sendMessage()">Search</button>
+</table>
+
+
+
+
+
+
