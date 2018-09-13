@@ -32,19 +32,10 @@ export class FetchDataComponent
     //var st = this.searchName;
     //student.name =  this.searchName;
     var Student = JSON.stringify(student);
-    //var httpOptions = {
-    //  headers: new HttpHeaders({                  
-    //    'Content-Type': 'application/json;charset=utf-8'
-    //  })
-    //};
     
-    //this.http.post<GetStudent[]>('api/SampleData/SearchByName?student=searchName', "student": "Ram").subscribe(result => {
-    //this.http.post<GetStudent[]>('api/SampleData/SearchByName', 'data:' + Student, httpOptions).subscribe(result => {
     this.http.get<GetStudent[]>('api/SampleData/SearchByName?student='+this.searchName).subscribe(result => {
       this.forecasts = result;
-    //var student = 'Ram'
-    //this.http.get<GetStudent[]>('api/SampleData/SearchByName?student=searchName').subscribe(result => {
-    //  this.forecasts = result;
+    
       console.log(this.searchName);
       console.log(this.forecasts, "heyyyy");
     }, error => console.error(error));
